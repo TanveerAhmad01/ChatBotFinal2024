@@ -7,7 +7,9 @@ url = "http://localhost:8000"
 def login(credentials):
     response = requests.post(url + '/login', data=json.dumps(credentials))
     if response.status_code == 200:
-        print(response.json()["Login_SuccessFully"])
+        
+        x = print(response.json()["Login_SuccessFully"])
+        return x
     else:
         print(response.json()["Login_SuccessFully"])
 
