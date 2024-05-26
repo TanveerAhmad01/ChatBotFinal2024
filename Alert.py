@@ -4,11 +4,13 @@ class CustomMessageBox:
     def __init__(self):
         self.msg_box = QMessageBox()
 
-    def show(self):
-        self.msg_box.setIcon(QMessageBox.Critical)
-        self.msg_box.setText("Something went very wrong.")
-        self.msg_box.setInformativeText("Enter Again")
-        self.msg_box.setStandardButtons(QMessageBox.Discard | QMessageBox.Ok)
+    def error(self,mesge,wrong):
+        self.mesge = mesge
+        self.wrong = wrong
+        self.msg_box.setIcon(QMessageBox.Information)
+        self.msg_box.setText(f"{self.wrong}")
+        self.msg_box.setInformativeText(f"{self.mesge}")
+        self.msg_box.setStandardButtons(QMessageBox.Ok)
         self.msg_box.setDefaultButton(QMessageBox.Discard)
         self.msg_box.buttonClicked.connect(self.button_clicked)  # Connect buttonClicked signal
         self.msg_box.exec()
@@ -28,11 +30,11 @@ class CustomMessageBox:
         dlg.exec()
         
 
-    def loginSuccessFully(self, name):
-        self.name = name
+    def loginSuccessFully(self, username):
+        self.username = username
         dlg = QMessageBox()
         dlg.setWindowTitle("Login")
-        dlg.setText(f"Welcome  {self.name}")  # Using f-string to include the name
+        dlg.setText(f"Welcome  {self.username}") 
         dlg.setStandardButtons(QMessageBox.Ok)
         dlg.buttonClicked.connect(self.button_clicked)
         dlg.exec()

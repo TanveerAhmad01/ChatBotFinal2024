@@ -1,18 +1,19 @@
 import tkinter as tk
 
 class ChatBotApp:
-    def __init__(self):
+    def __init__(self,username):
         self.wind = tk.Tk()
         self.wind.title('ChatBot')
         self.wind.geometry('600x600')
         self.wind.configure(bg='#0084ff')
         self.xi = 0
         self.yi = 0
-        
+        self.username = username
         self.create_widgets()
 
-    def create_widgets(self):
-        hcb_text = tk.Label(self.wind, height=2, width=14, bg='#0084ff', text='Tanveer ChatBot', font=('Impact', 20), fg='white')
+    def create_widgets(self,):
+        
+        hcb_text = tk.Label(self.wind, height=2, width=14, bg='#0084ff', text=f'{self.username} ChatBot', font=('Impact', 20), fg='white')
         hcb_text.place(x=200, y=5)
 
         self.chat_bg = tk.Frame(self.wind, height=420, width=580, bg='#f5f5f5')

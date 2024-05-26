@@ -4,14 +4,22 @@ import json
 url = "http://localhost:8000"
 
 
-def login(credentials):
+def loginClient(credentials):
     response = requests.post(url + '/login', data=json.dumps(credentials))
     if response.status_code == 200:
-        
-        x = print(response.json()["Login_SuccessFully"])
-        return x
+       data = response.json()["Login_SuccessFully"]
+       return data
     else:
         print(response.json()["Login_SuccessFully"])
+
+
+def signUp(credentials):
+    response = requests.post(url + '/signUp', data=json.dumps(credentials))
+    if response.status_code == 200:
+        return (response.json()["message"])
+        
+    else:
+        return (response.json()["message"])
 
 
 def getdata():
