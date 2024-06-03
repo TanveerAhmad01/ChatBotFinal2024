@@ -5,7 +5,7 @@ from Alert import *
 import sys
 from chatbot import *
 
-class LoginPage:
+class TkFrontLogin:
     def __init__(self):
         self.wind = tk.Tk()
         self.wind.title('Login')
@@ -32,6 +32,9 @@ class LoginPage:
 
         signup_button = tk.Button(self.wind, text='Signup', bg='#0084ff', fg='white', command=self.closeWindow)
         signup_button.grid(row=3, column=0, columnspan=2, padx=10, pady=10, sticky='we')
+
+
+class LoginPage(TkFrontLogin):
 
     def LoginUsingAPI(self):
         UserName = self.username_entry.get()

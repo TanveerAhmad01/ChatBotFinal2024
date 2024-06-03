@@ -5,7 +5,7 @@ import sys
 
 
 
-class SignupPage:
+class TkFrontSign:
     def __init__(self):
         self.wind = tk.Tk()
         self.wind.title('Signup')
@@ -39,6 +39,7 @@ class SignupPage:
         login_button = tk.Button(self.wind, text='Back to Login', bg='#0084ff', fg='white', command=self.closewindow)
         login_button.grid(row=4, column=0, columnspan=3, padx=10, pady=10, sticky='we')
 
+class SignupPage(TkFrontSign):
     def signupLogic(self):
         x = "User Alreay Exist"
         y = "Something went very wrong."

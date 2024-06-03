@@ -13,7 +13,7 @@ class ChatBotApp:
 
     def create_widgets(self,):
         
-        hcb_text = tk.Label(self.wind, height=2, width=14, bg='#0084ff', text=f'{self.username} ChatBot', font=('Impact', 20), fg='white')
+        hcb_text = tk.Label(self.wind, height=2, width=20, bg='#0084ff', text=f'{self.username} ChatBot', font=('Impact', 20), fg='white')
         hcb_text.place(x=200, y=5)
 
         self.chat_bg = tk.Frame(self.wind, height=420, width=580, bg='#f5f5f5')
@@ -37,39 +37,8 @@ class ChatBotApp:
                                 activebackground='#0084ff', command=self.send_message)
         send_button.place(x=5, y=4)
 
-    def clear_message(self):
-        self.yi = 0
-        for widget in self.chat_bg.winfo_children():
-            widget.destroy()
 
-    def send_message(self):
-        u = self.user_entry.get()
-        user = tk.Label(self.chat_bg, height=1, width=64, bg='#a6a6a6', fg='black', text=u+' <You ', font=12, anchor='e')
-        user.place(x=self.xi, y=self.yi)
-        if 'hello' in u:
-            bot = tk.Label(self.chat_bg, height=1, width=64, bg='white', fg='black', text=' Bot> Hello', font=12, anchor='w')
-            bot.place(x=self.xi, y=self.yi + 25)
-        elif 'how are you?' in u:
-            bot = tk.Label(self.chat_bg, height=1, width=64, bg='white', fg='black', text=' Bot> Im fine', font=12, anchor='w')
-            bot.place(x=self.xi, y=self.yi + 25)
-        elif u == 'clear':
-            self.clear_message()
-        else:
-            bot = tk.Label(self.chat_bg, height=1, width=64, bg='white', fg='black', text=' Bot> Do not understand you', font=12, anchor='w')
-            bot.place(x=self.xi, y=self.yi + 25)
-        self.yi += 50
-        self.user_entry.delete(0, 'end')
-
-    def on_enter(self, e):
-        self.user_entry.delete(0, 'end')
-        self.user_entry.config(fg='black')
-
-    def on_leave(self, e):
-        n = self.user_entry.get()
-        self.user_entry.config(fg='#5c5a5a')
-        if n == '' or n == ' ':
-            self.user_entry.insert(0, 'Enter message...')
-            self.user_entry.config(fg='#5c5a5a')
+   
 
     def run(self):
         self.wind.mainloop()
