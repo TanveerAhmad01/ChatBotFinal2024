@@ -1,0 +1,100 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["Hi", "Hello", "Hey", "How are you"],
+        "responses": ["Hello!", "Hi there!", "Hey!", "Greetings!"]
+      },
+      {
+        "tag": "farewell",
+        "patterns": ["Bye", "Goodbye", "See you later", "Take care"],
+        "responses": ["Goodbye!", "Farewell!", "See you later!", "Take care!"]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "Appreciate it"],
+        "responses": ["You're welcome!", "No problem!", "Glad I could help!"]
+      },
+      {
+        "tag": "help",
+        "patterns": ["Help", "What can you do", "Assistance"],
+        "responses": ["I can provide information about hospital services, book appointments, and answer FAQs."]
+      },
+      {
+        "tag": "appointment",
+        "patterns": ["Book an appointment", "Schedule appointment", "Doctor appointment"],
+        "responses": ["Sure, let me guide you through the appointment booking process. What is the purpose of your visit?"]
+      },
+      {
+        "tag": "services",
+        "patterns": ["Services offered", "What services are available", "Hospital services"],
+        "responses": ["Our hospital offers a wide range of services including emergency care, primary care, surgery, diagnostics, and more."]
+      },
+      {
+        "tag": "emergency",
+        "patterns": ["Emergency", "Urgent care", "Medical emergency"],
+        "responses": ["If you have a medical emergency, please dial 911 immediately."]
+      },
+      {
+        "tag": "appointment_reason",
+        "patterns": ["Checkup", "Follow-up", "Consultation", "Treatment"],
+        "responses": ["Thank you. Please provide your name and contact information so we can schedule the appointment."]
+      },
+      {
+        "tag": "appointment_confirm",
+        "patterns": ["Confirm appointment", "Yes", "Book it"],
+        "responses": ["Your appointment has been scheduled. You will receive a confirmation message shortly."]
+      },
+      {
+        "tag": "appointment_cancel",
+        "patterns": ["Cancel appointment", "Change appointment", "Reschedule"],
+        "responses": ["Sure, please provide your appointment details so we can assist you with rescheduling or cancellation."]
+      },
+      {
+        "tag": "about",
+        "patterns": ["About hospital", "Information about hospital", "Hospital details"],
+        "responses": ["Our hospital is a leading healthcare provider in the region, committed to delivering high-quality care to our patients."]
+      },
+      {
+        "tag": "location",
+        "patterns": ["Hospital location", "Where are you located", "Address"],
+        "responses": ["We are located at 123 Main Street, City, Country. You can find detailed directions on our website."]
+      },
+      {
+        "tag": "working_hours",
+        "patterns": ["Working hours", "Opening hours", "Office hours"],
+        "responses": ["Our hospital is open 24/7 for emergency services. For other departments, our working hours are from 9:00 AM to 5:00 PM, Monday to Friday."]
+      },
+      {
+        "tag": "payment",
+        "patterns": ["Payment options", "Insurance", "Billing"],
+        "responses": ["We accept various payment methods including cash, credit/debit cards, and insurance plans. For billing inquiries, please contact our billing department."]
+      },
+      {
+        "tag": "feedback",
+        "patterns": ["Leave feedback", "Complaint", "Suggestion"],
+        "responses": ["We value your feedback. You can leave your feedback or file a complaint through our website or by contacting our customer service department."]
+      },
+      {
+        "tag": "pharmacy",
+        "patterns": ["Pharmacy services", "Prescription refill", "Medications"],
+        "responses": ["Our pharmacy provides prescription refills, medication counseling, and a wide range of over-the-counter medications."]
+      },
+      {
+        "tag": "lab_tests",
+        "patterns": ["Lab tests", "Blood work", "Diagnostic tests"],
+        "responses": ["We offer a comprehensive range of laboratory tests including blood work, diagnostic imaging, and pathology services."]
+      },
+      {
+        "tag": "specialties",
+        "patterns": ["Specialty services", "Sub-specialties", "Medical specialties"],
+        "responses": ["Our hospital specializes in various medical disciplines including cardiology, oncology, neurology, orthopedics, and more."]
+      },
+      {
+        "tag": "insurance",
+        "patterns": ["Insurance coverage", "Insurance accepted", "Health insurance"],
+        "responses": ["We accept most major health insurance plans. Please check with your insurance provider for coverage details and co-pay information."]
+      }
+    ]
+  }
+  

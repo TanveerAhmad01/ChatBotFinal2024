@@ -1,7 +1,9 @@
 import tkinter as tk
+import json
+import random
 
-class ChatBotApp:
-    def __init__(self,username):
+class frontEnd:
+    def __init__(self, username):
         self.wind = tk.Tk()
         self.wind.title('ChatBot')
         self.wind.geometry('600x600')
@@ -10,6 +12,9 @@ class ChatBotApp:
         self.yi = 0
         self.username = username
         self.create_widgets()
+
+        with open('dataSet.json') as file:
+            self.data = json.load(file)
 
     def create_widgets(self,):
         
@@ -37,12 +42,43 @@ class ChatBotApp:
                                 activebackground='#0084ff', command=self.send_message)
         send_button.place(x=5, y=4)
 
+        self.chat_text = tk.Text(self.chat_bg, width=60, height=20, bg='#f5f5f5', font=('Helvectica', 15), relief=tk.FLAT, border=0)
+        self.chat_text.place(x=10, y=10)
 
-   
+class ChatBotApp(frontEnd):
+
+    def on_enter(self, event):
+        self.user_entry.delete(0, 'end')
+        self.user_entry.config(fg='black')
+
+    def on_leave(self, event):
+        if self.user_entry.get() == '':
+            self.user_entry.insert(0, 'Enter message...')
+            self.user_entry.config(fg='#5c5a5a')
+
+    def send_message(self):
+        user_input = self.user_entry.get()
+        self.user_entry.delete(0, 'end')
+
+        matched_intent = None
+        for intent in self.data['intents']:
+            for pattern in intent['patterns']:
+                if pattern.lower() in user_input.lower():
+                    matched_intent = intent
+                    break
+
+        if matched_intent:
+            responses = matched_intent['responses']
+            response = random.choice(responses)
+            self.chat_text.insert('end', f'You: {user_input}\n')
+            self.chat_text.insert('end', f'Bot: {response}\n\n')
+        else:
+            self.chat_text.insert('end', f'You: {user_input}\n')
+            self.chat_text.insert('end', f'Bot: Sorry, I\'m not sure how to respond to that.\n\n')
 
     def run(self):
         self.wind.mainloop()
 
 if __name__ == "__main__":
-    app = ChatBotApp()
+    app = ChatBotApp('User')
     app.run()
